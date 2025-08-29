@@ -1,6 +1,10 @@
 *{
     box-sizing:border-box
 }
+a {
+  color: #1b1b1f;
+  text-decoration: none;
+}
 body{
   margin:0;
   font-family:'Poppins', sans-serif;
@@ -157,4 +161,25 @@ h2{
   display:grid;
   gap:28px;
   grid-template-columns:1fr 1fr; 
+}
+
+.menuIcone{
+  width:32px;
+  height:32px;
+  cursor:pointer;
+  display:none;
+}
+
+.menu{
+  display:none;
+  flex-direction:column;
+  background:#ffffff;
+  box-shadow:0 4px 10px rgba(0,0,0,.1);
+  padding:10px;
+}
+.menu a{
+  padding:10px;
+  text-decoration:none;
+  color:#5f63d6;
+  font-weight:600;
 }

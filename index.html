@@ -5,19 +5,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>MaBe</title>
   <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
 </head>
 <body>
   <header class="barra">
     <div class="barraDentro">
       <div class="logo"><span class="logoPonto">Ma</span>Be</div>
-      <nav>
+      <nav class="itens">
         <a href="#sobre">Sobre</a>
         <a href="#figure">Figure</a>
         <a href="#curiosidades">Curiosidades</a>
       </nav>
+      <img src="Assets/material-symbols_menu.png" class="menuIcone">
     </div>
   </header>
+    <div class="menu">
+    <a href="#sobre" class="linkMenu">Sobre</a>
+    <a href="#figure" class="linkMenu">Figure</a>
+    <a href="#curiosidades" class="linkMenu">Curiosidades</a>
+  </div>
 
   <main class="conteudo">
     <section id="sobre" class="secao">
@@ -78,14 +85,14 @@
 
       <div class="redes">
         <h3>Redes sociais</h3>
-        <div class="itemRede">
+        <a class="itemRede" href="https://www.instagram.com/mariotibea_/">
           <img class="iconeIg" src="Assets/mdi_instagram.png">
           <span class="usuario">@mariotibea_</span>
-        </div>
-        <div class="itemRede">
+        </a>
+        <a class="itemRede" href="https://www.instagram.com/im_mari_luna/">
           <img class="iconeIg" src="Assets/mdi_instagram.png">
           <span class="usuario">@marilunasgallery</span>
-        </div>
+        </a>
       </div>
     </section>
   </main>
