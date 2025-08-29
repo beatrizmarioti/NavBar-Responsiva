@@ -19,6 +19,7 @@ function ajustarMenu(){
     if(links) links.style.display = "flex";
     if(menuIcone) menuIcone.style.display = "none";
     if(menu) menu.style.display = "none";
+    if(itensNormal) itensNormal.style.display = "block";
   }
 }
 
