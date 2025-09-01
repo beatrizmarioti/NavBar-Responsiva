@@ -4,7 +4,7 @@ Repositório do site criado para a disciplina **DAD – Desenvolvimento de Aplic
 O projeto é uma _landing page_ pessoal com três seções principais:
 
 - **Sobre** — informações (nome, idade e onde trabalha) de cada aluna.  
-- **Figure** — “action figures” das duas (arte produzida com também em DAD).  
+- **Figure** — “action figures” das duas (arte produzida em DAD).  
 - **Curiosidades** — lista de curiosidades de cada uma.  
 
 O design inicial foi feito no **Figma** e todo o conteúdo está reunido em arquivos **HTML**, **CSS** e **JavaScript**, com as seções exibidas de forma contínua e navegáveis pela **navbar responsiva**.
@@ -19,9 +19,10 @@ O design inicial foi feito no **Figma** e todo o conteúdo está reunido em arqu
 4. [Estrutura de código](#estrutura-de-código)  
 5. [Funcionalidades por seção](#funcionalidades-por-seção)  
 6. [Como foi feita a navbar](#como-foi-feita-a-navbar)  
-7. [Checklist de testes](#checklist-de-testes)  
-8. [Deploy (site no ar)](#deploy-site-no-ar)  
-9. [Créditos](#créditos)  
+7. [Modo Noturno](#modo-noturno)  
+8. [Checklist de testes](#checklist-de-testes)  
+9. [Deploy (site no ar)](#deploy-site-no-ar)  
+10. [Créditos](#créditos)  
 
 ---
 
@@ -37,7 +38,7 @@ A navbar foi planejada para se adaptar tanto a telas de celular quanto a telas m
 
 - **HTML5** — estrutura da página  
 - **CSS3** — estilos visuais  
-- **JavaScript** — interação da navbar  
+- **JavaScript** — interação da navbar e modo noturno  
 - **Figma** — protótipo e design inicial  
 
 ---
@@ -52,28 +53,33 @@ A navbar foi planejada para se adaptar tanto a telas de celular quanto a telas m
 
 ## Estrutura de código
 
-### O HTML reúne:
-- a **navbar** no topo,  
-- as seções **Sobre**, **Figure** e **Curiosidades**.  
+### HTML
 
-### O CSS reúne:
-- todas as estilizações necessárias.
+- A **navbar** no topo  
+- As seções **Sobre**, **Figure** e **Curiosidades**  
 
-### O JavaScript reúne:
-- o script para funcionar a navbar.
+### CSS
+
+- Estilizações visuais  
+- Variáveis CSS para o **modo noturno** (`--bg` e `--text`)  
+
+### JavaScript
+
+- Lógica da **navbar responsiva**  
+- Lógica do **modo noturno**, com persistência no `localStorage`  
 
 ---
 
 ## Funcionalidades por seção
 
 ### Sobre
-- Campos com **nome**, **idade** e **onde trabalha** de cada aluna.  
+- Campos com **nome**, **idade** e **onde trabalha** de cada aluna  
 
 ### Figure
-- Exibição das **action figures** criadas em DAD.  
+- Exibição das **action figures** criadas em DAD  
 
 ### Curiosidades
-- Lista de curiosidades de cada uma, organizada em seções distintas.  
+- Lista de curiosidades de cada uma, organizada em seções distintas  
 
 ---
 
@@ -81,10 +87,36 @@ A navbar foi planejada para se adaptar tanto a telas de celular quanto a telas m
 
 A navbar foi desenvolvida em **JavaScript puro**, com o seguinte funcionamento:
 
-- **Desktop**: menu exibido em linha.  
-- **Mobile**: botão hambúrguer que abre e fecha o menu.  
-- **Links ativos**: o link da seção atual é destacado automaticamente.  
-- **Acessibilidade**: uso de atributos `aria-expanded`, `aria-controls` e `aria-current` para indicar estados e localização da navegação.  
+- **Desktop**: menu exibido em linha  
+- **Mobile**: botão hambúrguer que abre e fecha o menu  
+- **Links ativos**: o link da seção atual é destacado automaticamente  
+- **Acessibilidade**: atributos `aria-expanded`, `aria-controls` e `aria-current` para indicar estados e localização da navegação  
+
+---
+
+## 🌙 Modo Noturno
+
+O site possui **modo noturno** ativável pelo usuário, funcionando tanto na navbar principal quanto no menu mobile.
+
+- **Botões de alternância**:  
+  1. `🌙` na navbar desktop  
+  2. `🌙` dentro do menu mobile  
+
+- **Funcionamento**:  
+  - Ao clicar em qualquer botão, o site alterna entre **modo claro** e **modo escuro**, alterando apenas o **fundo e cores de texto**.  
+  - O ícone do botão muda para `☀️` quando o modo escuro está ativo  
+
+- **Persistência**:  
+  - O estado do modo (claro/escuro) é salvo no `localStorage`, garantindo que ao recarregar a página, o site mantenha o modo selecionado pelo usuário  
+
+- **Exemplo de uso**:  
+  1. Clique no botão `🌙` na navbar ou no menu mobile  
+  2. Observe a mudança do fundo do site e do ícone  
+  3. Recarregue a página e o modo escolhido será mantido  
+
+- **Tecnologia usada**:  
+  - CSS com **variáveis para cores** (`--bg` e `--text`)  
+  - JavaScript para **toggle de classe `dark-mode`** no `<body>` e atualização do `localStorage`  
 
 ---
 
@@ -92,6 +124,7 @@ A navbar foi desenvolvida em **JavaScript puro**, com o seguinte funcionamento:
 
 - [X] Navbar abre e fecha corretamente no celular  
 - [X] Links navegam para a seção correta dentro do mesmo HTML  
+- [X] Modo noturno funciona tanto na navbar aberta quanto fechada  
 - [X] Site é exibido sem problemas em diferentes tamanhos de tela  
 - [X] Deploy está acessível online  
 
@@ -100,12 +133,12 @@ A navbar foi desenvolvida em **JavaScript puro**, com o seguinte funcionamento:
 ## Deploy (site no ar)
 
 O site está publicado online para acesso direto.  
-> O link será inserido aqui. 
+> https://navbar-responsiva.onrender.com/ 
 
 ---
 
 ## Créditos
 
-- **Autoras**: **Mari Luna** e **Bea Marioti** — Turma **2°E TECH** 
-- **Disciplina**: **DAD – Desenvolvimento de Aplicações Dinâmicas**
-- **Professor**: **Rodolfo Gonçalves da Silva** 
+- **Autoras**: **Mari Luna** e **Bea Marioti** — Turma **2°E TECH**  
+- **Disciplina**: **DAD – Desenvolvimento de Aplicações Dinâmicas**  
+- **Professor**: **Rodolfo Gonçalves da Silva**

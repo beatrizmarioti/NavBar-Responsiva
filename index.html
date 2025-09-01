@@ -1,100 +1,118 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>MaBe</title>
-  <link rel="stylesheet" href="style.css">
-  <script src="script.js" defer></script>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
-</head>
-<body>
-  <header class="barra">
-    <div class="barraDentro">
-      <div class="logo"><span class="logoPonto">Ma</span>Be</div>
-      <nav class="itens">
-        <a href="#sobre">Sobre</a>
-        <a href="#figure">Figure</a>
-        <a href="#curiosidades">Curiosidades</a>
-      </nav>
-      <img src="Assets/material-symbols_menu.png" class="menuIcone">
-    </div>
-  </header>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>MaBe</title>
+    <!-- CSS principal -->
+    <link rel="stylesheet" href="style.css" />
+    <!-- JS principal -->
+    <script src="script.js" defer></script>
+    <!-- Fonte Poppins -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Navbar fixa -->
+    <header class="barra">
+      <div class="barraDentro">
+        <div class="logo"><span class="logoPonto">Ma</span>Be</div>
+        <!-- Navbar desktop -->
+        <nav class="itens">
+          <a href="#sobre">Sobre</a>
+          <a href="#figure">Figure</a>
+          <a href="#curiosidades">Curiosidades</a>
+          <button id="temaBtn" aria-label="Alternar tema">🌙</button>
+        </nav>
+        <!-- Ícone hambúrguer para mobile -->
+        <img src="Assets/material-symbols_menu.png" class="menuIcone" />
+      </div>
+    </header>
+
+    <!-- Menu mobile -->
     <div class="menu">
-    <a href="#sobre" class="linkMenu">Sobre</a>
-    <a href="#figure" class="linkMenu">Figure</a>
-    <a href="#curiosidades" class="linkMenu">Curiosidades</a>
-  </div>
+      <a href="#sobre" class="linkMenu">Sobre</a>
+      <a href="#figure" class="linkMenu">Figure</a>
+      <a href="#curiosidades" class="linkMenu">Curiosidades</a>
+      <button id="temaBtnNavBarFechada" aria-label="Alternar tema">🌙</button>
+    </div>
 
-  <main class="conteudo">
-    <section id="sobre" class="secao">
-      <h2>Sobre</h2>
-      <div class="grade">
-        <article class="cartaoSobre">
-          <img class="avatar" src="Assets/image 2 (1).png">
-          <div class="caixaInfo">
-            <b>Nome:</b> Mari Luna<br>
-            <span><b>Idade:</b> 16 anos</span><br>
-            <span><b>Empresa:</b> Picpay – PJ</span>
-          </div>
-        </article>
+    <!-- Conteúdo principal -->
+    <main class="conteudo">
+      <!-- Seção Sobre -->
+      <section id="sobre" class="secao">
+        <h2>Sobre</h2>
+        <div class="grade">
+          <!-- Cartão Mari -->
+          <article class="cartaoSobre">
+            <img class="avatar" src="Assets/image 2 (1).png" />
+            <div class="caixaInfo">
+              <b>Nome:</b> Mari Luna<br />
+              <span><b>Idade:</b> 16 anos</span><br />
+              <span><b>Empresa:</b> Picpay – PJ</span>
+            </div>
+          </article>
+          <!-- Cartão Bea -->
+          <article class="cartaoSobreDireita">
+            <img class="avatar" src="Assets/image 1.png" />
+            <div class="caixaInfo">
+              <b>Nome:</b> Bea Marioti<br />
+              <span><b>Idade:</b> 16 anos</span><br />
+              <span><b>Empresa:</b> Picpay – Investimentos</span>
+            </div>
+          </article>
+        </div>
+      </section>
 
-        <article class="cartaoSobreDireita">
-          <img class="avatar" src="Assets/image 1.png">
-          <div class="caixaInfo">
-            <b>Nome:</b> Bea Marioti<br>
-            <span><b>Idade:</b> 16 anos</span><br>
-            <span><b>Empresa:</b> Picpay – Investimentos</span>
-          </div>
-        </article>
-      </div>
-    </section>
+      <!-- Seção Figure -->
+      <section id="figure" class="secao">
+        <h2>Figure</h2>
+        <div class="grade">
+          <article class="cartaoFigura">
+            <img class="imagemFigura" src="Assets/image 4.png" />
+          </article>
+          <article class="cartaoFigura">
+            <img class="imagemFigura" src="Assets/image 3.png" />
+          </article>
+        </div>
+      </section>
 
-    <section id="figure" class="secao">
-      <h2>Figure</h2>
-      <div class="grade">
-        <article class="cartaoFigura">
-          <img class="imagemFigura" src="Assets/image 4.png">
-        </article>
-        <article class="cartaoFigura">
-          <img class="imagemFigura" src="Assets/image 3.png">
-        </article>
-      </div>
-    </section>
+      <!-- Seção Curiosidades -->
+      <section id="curiosidades" class="secao">
+        <h2>Curiosidades</h2>
+        <div class="grade">
+          <article class="cartaoFato">
+            <ul class="lista">
+              <li>Sou carioca</li>
+              <li>Tenho um Shih-Tzu chamado Bob Alexandre (Xandy)</li>
+              <li>Quase quebrei o pescoço fazendo hipismo</li>
+              <li>Odeio que me chamem de Marianna</li>
+            </ul>
+          </article>
+          <article class="cartaoFatoClaro">
+            <ul class="lista">
+              <li>Já fui auxiliar de dentista</li>
+              <li>Meu tio é famoso no YouTube/TikTok (akputones)</li>
+              <li>Pinguim é meu animal favorito</li>
+            </ul>
+          </article>
+        </div>
 
-    <section id="curiosidades" class="secao">
-      <h2>Curiosidades</h2>
-      <div class="grade">
-        <article class="cartaoFato">
-          <ul class="lista">
-            <li>Sou carioca</li>
-            <li>Tenho um Shih-Tzu chamado Bob Alexandre (Xandy)</li>
-            <li>Quase quebrei o pescoço fazendo hipismo</li>
-            <li>Odeio que me chamem de Marianna</li>
-          </ul>
-        </article>
-
-        <article class="cartaoFatoClaro">
-          <ul class="lista">
-            <li>Já fui auxiliar de dentista</li>
-            <li>Meu tio é famoso no YouTube/TikTok (akputones)</li>
-            <li>Pinguim é meu animal favorito</li>
-          </ul>
-        </article>
-      </div>
-
-      <div class="redes">
-        <h3>Redes sociais</h3>
-        <a class="itemRede" href="https://www.instagram.com/mariotibea_/">
-          <img class="iconeIg" src="Assets/mdi_instagram.png">
-          <span class="usuario">@mariotibea_</span>
-        </a>
-        <a class="itemRede" href="https://www.instagram.com/im_mari_luna/">
-          <img class="iconeIg" src="Assets/mdi_instagram.png">
-          <span class="usuario">@marilunasgallery</span>
-        </a>
-      </div>
-    </section>
-  </main>
-</body>
+        <!-- Redes sociais -->
+        <div class="redes">
+          <h3>Redes sociais</h3>
+          <a class="itemRede" href="https://www.instagram.com/mariotibea_/">
+            <img class="iconeIg" src="Assets/mdi_instagram.png" />
+            <span class="usuario">@mariotibea_</span>
+          </a>
+          <a class="itemRede" href="https://www.instagram.com/marilunasgallery/">
+            <img class="iconeIg" src="Assets/mdi_instagram.png" />
+            <span class="usuario">@marilunasgallery</span>
+          </a>
+        </div>
+      </section>
+    </main>
+  </body>
 </html>

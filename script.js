@@ -1,42 +1,75 @@
+// largura máxima para considerar a tela como "pequena" (mobile)
 const laguraPequeno = 900;
 
+// selecionando elementos do DOM
 const barra = document.querySelector(".barra");
-const itensNormal = document.querySelector(".itens")
+const itensNormal = document.querySelector(".itens"); // navbar desktop
 const barraDentro = document.querySelector(".barraDentro");
-const links = document.querySelector(".links");
-const menuIcone = document.querySelector(".menuIcone");
-const menu = document.querySelector(".menu");
-const linksMenu = document.querySelectorAll(".menu a");
+const links = document.querySelector(".links"); // não usado, pode remover
+const menuIcone = document.querySelector(".menuIcone"); // ícone hambúrguer
+const menu = document.querySelector(".menu"); // menu mobile
+const linksMenu = document.querySelectorAll(".menu a"); // links do menu mobile
+const temaBtn = document.getElementById("temaBtn"); // botão tema desktop
+const temaBtnFechado = document.getElementById("temaBtnNavBarFechada"); // botão tema mobile
 
-function ajustarMenu(){
+// função para ajustar a navbar de acordo com o tamanho da tela
+function ajustarMenu() {
   const pequeno = window.innerWidth <= laguraPequeno;
 
-  if(pequeno){
-    if(links) links.style.display = "none";
-    if(menuIcone) menuIcone.style.display = "block";
-    if(itensNormal) itensNormal.style.display = "none";
-  }else{
-    if(links) links.style.display = "flex";
-    if(menuIcone) menuIcone.style.display = "none";
-    if(menu) menu.style.display = "none";
+  if (pequeno) {
+    if (itensNormal) itensNormal.style.display = "none"; // esconde navbar desktop
+    if (menuIcone) menuIcone.style.display = "block"; // mostra hambúrguer
+    if (menu) menu.style.display = "none"; // garante menu mobile fechado
+  } else {
+    if (itensNormal) itensNormal.style.display = "flex"; // mostra navbar desktop
+    if (menuIcone) menuIcone.style.display = "none"; // esconde hambúrguer
+    if (menu) menu.style.display = "none"; // menu mobile sempre fechado em desktop
   }
 }
 
-function alternarMenu(){
-  if(!menu) return;
+// alterna abertura/fechamento do menu mobile
+function alternarMenu() {
+  if (!menu) return;
   const aberto = menu.style.display === "flex";
-  menu.style.display = aberto ? "none" : "flex";
+  menu.style.display = aberto ? "none" : "flex"; // toggle simples
 }
 
+// alterna modo claro/escuro
+function alternarTema() {
+  document.body.classList.toggle("dark-mode"); // adiciona/remove classe
+  const dark = document.body.classList.contains("dark-mode");
+
+  // atualiza os dois botões de tema
+  if (temaBtn) temaBtn.textContent = dark ? "☀️" : "🌙";
+  if (temaBtnFechado) temaBtnFechado.textContent = dark ? "☀️" : "🌙";
+
+  // salva estado no localStorage
+  localStorage.setItem("tema", dark ? "dark" : "light");
+}
+
+// inicializa ajustes da navbar ao carregar e redimensionar a tela
 window.addEventListener("load", ajustarMenu);
 window.addEventListener("resize", ajustarMenu);
 
-if(menuIcone) menuIcone.addEventListener("click", alternarMenu);
+// abre/fecha menu mobile ao clicar no ícone
+if (menuIcone) menuIcone.addEventListener("click", alternarMenu);
 
-linksMenu.forEach(a => {
+// fecha menu mobile ao clicar em um link
+linksMenu.forEach((a) => {
   a.addEventListener("click", () => {
-    if(window.innerWidth <= larguraCorte){
-      menu.style.display = "none";
+    if (window.innerWidth <= laguraPequeno) {
+      menu.style.display = "none"; // fecha menu mobile
     }
   });
 });
+
+// verifica se o modo dark estava salvo e aplica ao carregar a página
+if (localStorage.getItem("tema") === "dark") {
+  document.body.classList.add("dark-mode");
+  if (temaBtn) temaBtn.textContent = "☀️";
+  if (temaBtnFechado) temaBtnFechado.textContent = "☀️";
+}
+
+// adiciona evento de clique nos botões de tema
+if (temaBtn) temaBtn.addEventListener("click", alternarTema);
+if (temaBtnFechado) temaBtnFechado.addEventListener("click", alternarTema);
